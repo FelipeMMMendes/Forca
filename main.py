@@ -13,20 +13,20 @@ traces = []
 for n in chosen_word:
     traces.append('_')
 
-traces = ' '.join(traces)
+traces = ''.join(traces)
 
 print(traces)  
 #TODO-2 - Ask the user to guess a letter and assign their answer to a variable called guess. Make guess lowercase.
 guess = str(input("Guess a letter: ").lower())
 #TODO-3 - Check if the letter the user guessed (guess) is one of the letters in the chosen_word.
 
-for w in chosen_word:
-    if guess == w:
-        print(w)
-        pos = chosen_word.index(guess)
-        traces = list(traces)
-        traces[pos] = guess
-    else:
-        print("WRONG")    
+traces = list(traces)
 
-print(traces)
+for n in range(len(chosen_word)):
+    letter = chosen_word[n]
+    if letter == guess:
+        traces[n] = guess
+        tela = ''.join(traces)          
+
+
+print(tela)
